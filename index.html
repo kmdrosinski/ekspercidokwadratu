@@ -9,8 +9,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
   <style>
-    /* Reset */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
     html, body {
       height: 100%;
@@ -18,7 +21,7 @@
       overflow: hidden;
     }
 
-    /* Wideo pełnoekranowe w tle */
+    /* Wideo w tle */
     .video-bg {
       position: fixed;
       top: 0;
@@ -31,13 +34,13 @@
 
     /* Kontener tekstu wyśrodkowany */
     .content {
-      position: absolute;
+      position: fixed;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
       text-align: center;
       color: #333333;
-      text-shadow: 1px 1px 8px rgba(255,255,255,0.6);
+      text-shadow: 2px 2px 12px rgba(255,255,255,0.7);
       padding: 20px;
       max-width: 90%;
     }
