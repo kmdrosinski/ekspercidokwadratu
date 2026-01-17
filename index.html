@@ -15,12 +15,7 @@
     html, body {
       height: 100%;
       font-family: 'Poppins', sans-serif;
-    }
-
-    body {
-      position: relative;
       overflow: hidden;
-      color: #333333; /* ciemnoszary tekst */
     }
 
     /* Wideo pełnoekranowe w tle */
@@ -34,38 +29,44 @@
       z-index: -1;
     }
 
-    /* Kontener tekstu */
+    /* Kontener tekstu wyśrodkowany */
     .content {
-      position: relative;
-      z-index: 1;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       text-align: center;
+      color: #333333;
+      text-shadow: 1px 1px 8px rgba(255,255,255,0.6);
       padding: 20px;
-      background: rgba(255, 255, 255, 0.2); /* lekka przeźroczystość pod tekstem, opcjonalnie */
+      max-width: 90%;
     }
 
     h1 {
-      font-size: 48px;
-      margin-bottom: 20px;
+      font-size: 56px;
       font-weight: 600;
+      margin-bottom: 20px;
     }
 
     p {
-      font-size: 20px;
+      font-size: 22px;
       margin-bottom: 30px;
     }
 
     .contact {
-      font-size: 22px;
+      font-size: 24px;
       font-weight: 600;
     }
 
-    @media (max-width: 600px) {
-      h1 { font-size: 32px; }
+    /* Responsywność */
+    @media (max-width: 768px) {
+      h1 { font-size: 40px; }
+      p { font-size: 18px; }
+      .contact { font-size: 20px; }
+    }
+
+    @media (max-width: 480px) {
+      h1 { font-size: 28px; }
       p { font-size: 16px; }
       .contact { font-size: 18px; }
     }
@@ -79,7 +80,7 @@
     Twoja przeglądarka nie obsługuje wideo.
   </video>
 
-  <!-- Tekst na wierzchu -->
+  <!-- Tekst wyśrodkowany -->
   <div class="content">
     <h1>Eksperci do Kwadratu</h1>
     <p>Strona w budowie. Wkrótce pokażemy więcej.</p>
