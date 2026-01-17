@@ -1,99 +1,129 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-<meta charset="UTF-8">
-<title>Eksperci do Kwadratu</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Eksperci do Kwadratu</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Google Fonts: Poppins -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Google Fonts: Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
-<style>
-html, body {
-height: 100%;
-margin: 0;
-font-family: 'Poppins', sans-serif;
-overflow: hidden;
-color: #333333;
-}
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      overflow: hidden;
+      color: #ffffff;
+      background: #000;
+    }
 
-/* Wideo w tle */
-.video-bg {
-position: fixed;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-object-fit: cover;
-z-index: -1;
-}
+    /* Wideo pełnoekranowe */
+    .video-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -2;
+    }
 
-/* Kontener wyśrodkowanego tekstu */
-.content {
-position: absolute;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
-text-align: center;
-max-width: 90%;
-text-shadow: 2px 2px 12px rgba(255,255,255,0.7);
-}
+    /* Gradient overlay */
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.7));
+      z-index: -1;
+    }
 
-h1 {
-font-size: 56px;
-font-weight: 600;
-margin-bottom: 20px;
-}
+    /* Wyśrodkowany tekst */
+    .content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      max-width: 90%;
+      z-index: 1;
+      text-shadow: 2px 2px 12px rgba(0,0,0,0.7);
+      opacity: 0;
+      animation: fadeIn 1.5s forwards;
+    }
 
-p {
-font-size: 22px;
-margin-bottom: 30px;
-}
+    h1 {
+      font-size: 56px;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
 
-/* Numer telefonu przy dole ekranu */
-.contact {
-position: fixed;
-bottom: 20px;
-width: 100%;
-text-align: center;
-font-size: 24px;
-font-weight: 600;
-z-index: 1;
-text-shadow: 2px 2px 12px rgba(255,255,255,0.7);
-}
+    p {
+      font-size: 22px;
+      margin-bottom: 30px;
+    }
 
-/* Responsywność */
-@media (max-width: 768px) {
-h1 { font-size: 40px; }
-p { font-size: 18px; }
-.contact { font-size: 20px; }
-}
+    /* Numer telefonu na dole */
+    .contact {
+      position: fixed;
+      bottom: 20px;
+      width: 100%;
+      text-align: center;
+      font-size: 24px;
+      font-weight: 600;
+      z-index: 1;
+      text-shadow: 2px 2px 12px rgba(0,0,0,0.7);
+      animation: pulse 2s infinite;
+    }
 
-@media (max-width: 480px) {
-h1 { font-size: 28px; }
-p { font-size: 16px; }
-.contact { font-size: 18px; }
-}
-</style>
+    /* Animacje */
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translate(-50%, -55%); }
+      100% { opacity: 1; transform: translate(-50%, -50%); }
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    /* Responsywność */
+    @media (max-width: 768px) {
+      h1 { font-size: 40px; }
+      p { font-size: 18px; }
+      .contact { font-size: 20px; }
+    }
+
+    @media (max-width: 480px) {
+      h1 { font-size: 28px; }
+      p { font-size: 16px; }
+      .contact { font-size: 18px; }
+    }
+  </style>
 </head>
 <body>
 
-<!-- Wideo w tle -->
-<video class="video-bg" autoplay muted loop playsinline>
-<source src="animacja.mp4" type="video/mp4">
-Twoja przeglądarka nie obsługuje wideo.
-</video>
+  <!-- Wideo w tle -->
+  <video class="video-bg" autoplay muted loop playsinline>
+    <source src="animacja.mp4" type="video/mp4">
+    Twoja przeglądarka nie obsługuje wideo.
+  </video>
 
-<!-- Wyśrodkowany tytuł i opis -->
-<div class="content">
-<h1>Eksperci do Kwadratu</h1>
-<p>Strona w budowie. Wkrótce pokażemy więcej.</p>
-</div>
+  <!-- Gradient overlay -->
+  <div class="overlay"></div>
 
-<!-- Numer telefonu na dole -->
-<div class="contact"> 727 928 295</div>
+  <!-- Wyśrodkowany tytuł i opis -->
+  <div class="content">
+    <h1>Eksperci do Kwadratu</h1>
+    <p>Strona w budowie. Wkrótce pokażemy więcej.</p>
+  </div>
+
+  <!-- Numer telefonu na dole z animacją -->
+  <div class="contact"> 727 928 295</div>
 
 </body>
 </html>
