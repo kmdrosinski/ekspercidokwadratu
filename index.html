@@ -1,12 +1,9 @@
 <!DOCTYPE html>
-
 <html lang="pl">
 <head>
 <meta charset="UTF-8">
 <title>Eksperci do Kwadratu</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<!-- Google Fonts: Poppins -->
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
@@ -15,40 +12,46 @@ html, body {
 height: 100%;
 margin: 0;
 font-family: 'Poppins', sans-serif;
-overflow: hidden;
-background: #000;
-color: #33391b;
+background-color: #33391b;
+color: #DFDAD4;
 }
 
-/* Wideo w tle */
-.video-bg {
+/* Tło ze szkicem */
+.background {
 position: fixed;
 top: 0;
 left: 0;
 width: 100%;
 height: 100%;
-object-fit: cover;
+background: url('szkic.png') center center / cover no-repeat;
 z-index: 0;
+/* opacity wyłączone */
 }
 
-/* Gradient tylko od dołu */
-.overlay {
-position: fixed;
-top: 0;
-left: 0;
+/* Logo nad nagłówkiem */
+.logo {
+position: absolute;
+top: 20px;
+left: 50%;
+transform: translateX(-50%);
+max-width: 200px;
+height: auto;
+z-index: 2;
+}
+
+/* Nagłówek u góry - cienki */
+.header {
+position: absolute;
+top: 120px; /* pod logo */
 width: 100%;
-height: 100%;
-background: linear-gradient(
-  to top,
-  rgba(51, 57, 27, 0.85) 0%,
-  rgba(51, 57, 27, 0.55) 25%,
-  rgba(51, 57, 27, 0.25) 45%,
-  rgba(51, 57, 27, 0.0) 65%
-);
-z-index: 1;
+text-align: center;
+font-size: 42px;
+font-weight: 400; /* zmieniono z 600 na 400 */
+letter-spacing: 1px;
+z-index: 2;
 }
 
-/* Wyśrodkowany tekst */
+/* Treść centralna */
 .content {
 position: absolute;
 top: 50%;
@@ -57,92 +60,61 @@ transform: translate(-50%, -50%);
 text-align: center;
 max-width: 90%;
 z-index: 2;
-color: #33391b;
-opacity: 0;
-animation: fadeIn 1.5s forwards;
 }
 
-h1 {
-font-size: 56px;
-font-weight: 600;
-margin-bottom: 20px;
-}
-
-p {
+.content p {
 font-size: 22px;
-margin-bottom: 30px;
+margin-top: 10px;
+font-weight: 400;
 }
 
 /* Kontakt na dole */
 .contact {
-position: fixed;
-bottom: 20px;
+position: absolute;
+bottom: 30px;
 width: 100%;
 text-align: center;
-font-size: 20px;
-font-weight: 600;
+font-size: 18px;
+font-weight: 500;
 z-index: 2;
-animation: pulse 2s infinite;
-color: #33391b;
-}
-
-.contact div {
-margin: 6px 0;
+line-height: 1.8;
 }
 
 .contact a {
-color: #33391b;
+color: #DFDAD4;
 text-decoration: none;
--webkit-tap-highlight-color: transparent;
-}
-
-/* Animacje */
-@keyframes fadeIn {
-0% { opacity: 0; transform: translate(-50%, -55%); }
-100% { opacity: 1; transform: translate(-50%, -50%); }
-}
-
-@keyframes pulse {
-0%, 100% { transform: scale(1); }
-50% { transform: scale(1.05); }
 }
 
 /* Responsywność */
 @media (max-width: 768px) {
-h1 { font-size: 40px; }
-p { font-size: 18px; }
-.contact { font-size: 18px; }
+.logo { max-width: 150px; top: 15px; }
+.header { font-size: 30px; top: 90px; }
+.content p { font-size: 18px; }
+.contact { font-size: 16px; }
 }
 
 @media (max-width: 480px) {
-h1 { font-size: 28px; }
-p { font-size: 16px; }
-.contact { font-size: 16px; }
+.logo { max-width: 120px; top: 10px; }
+.header { font-size: 24px; top: 70px; }
+.content p { font-size: 16px; }
+.contact { font-size: 15px; }
 }
 </style>
-
 </head>
 <body>
 
-<!-- Wideo w tle -->
+<div class="background"></div>
 
-<video class="video-bg" autoplay muted loop playsinline>
-<source src="animacja.mp4" type="video/mp4">
-Twoja przeglądarka nie obsługuje wideo.
-</video>
+<!-- Logo -->
+<img class="logo" src="logo.png" alt="Eksperci do Kwadratu Logo">
 
-<!-- Gradient -->
-
-<div class="overlay"></div>
-
-<!-- Treść -->
-
-<div class="content">
-<h1>Eksperci do Kwadratu</h1>
-<p>Strona w budowie. Wkrótce pokażemy więcej.</p>
+<div class="header">
+Eksperci do Kwadratu
 </div>
 
-<!-- Kontakt -->
+<div class="content">
+<p>Strona w budowie. Wkrótce pokażemy więcej.</p>
+</div>
 
 <div class="contact">
 <div><a href="mailto:kontakt@ekspercidokwadratu.pl">kontakt@ekspercidokwadratu.pl</a></div>
