@@ -8,83 +8,76 @@
 
 <style>
 html, body {
-height: 50%;
-margin: 0;
-font-family: 'Poppins', sans-serif;
-background-color: #33391b;
-color: #DFDAD4;
+  height: 100%;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #33391b;
+  color: #DFDAD4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* Tło ze szkicem */
 .background {
-position: fixed;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-background: url('szkic.png') center center / cover no-repeat;
-z-index: 0;
-/* opacity wyłączone */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('szkic.png') center center / cover no-repeat;
+  z-index: 0;
 }
 
 /* Logo nad nagłówkiem */
 .logo {
-position: absolute;
-top: 20px;
-left: 50%;
-transform: translateX(-50%);
-max-width: 500px;
-height: auto;
-z-index: 2;
+  margin-top: 20px;
+  max-width: 500px;
+  height: auto;
+  z-index: 2;
 }
 
-/* Treść centralna */
-.content {
-position: absolute;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
-text-align: center;
-max-width: 90%;
-z-index: 2;
+/* Centralna treść */
+.main {
+  z-index: 2;
+  text-align: center;
+  margin-top: 20px; /* podniesiona treść wyżej */
 }
 
-.content p {
-font-size: 22px;
-margin-top: 10px;
-font-weight: 400;
+.main p {
+  font-size: 22px;
+  font-weight: 400;
+  margin: 10px 0 30px 0; /* odstęp między treścią a kontaktem */
 }
 
-/* Kontakt na dole */
+/* Kontakt pod treścią */
 .contact {
-position: absolute;
-bottom: 230px;
-width: 100%;
-text-align: center;
-font-size: 14px;
-font-weight: 500;
-z-index: 2;
-line-height: 1.8;
+  z-index: 2;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.8;
+  margin-top: -10px; /* delikatne przesunięcie w górę */
 }
 
 .contact a {
-color: #DFDAD4;
-text-decoration: none;
+  color: #DFDAD4;
+  text-decoration: none;
 }
 
 /* Responsywność */
 @media (max-width: 768px) {
-.logo { max-width: 150px; top: 15px; }
-.header { font-size: 30px; top: 90px; }
-.content p { font-size: 18px; }
-.contact { font-size: 16px; }
+  .logo { max-width: 150px; margin-top: 15px; }
+  .main { margin-top: 15px; }
+  .main p { font-size: 18px; margin: 10px 0 20px 0; }
+  .contact { font-size: 14px; margin-top: -5px; }
 }
 
 @media (max-width: 480px) {
-.logo { max-width: 120px; top: 10px; }
-.header { font-size: 24px; top: 70px; }
-.content p { font-size: 16px; }
-.contact { font-size: 15px; }
+  .logo { max-width: 120px; margin-top: 10px; }
+  .main { margin-top: 10px; }
+  .main p { font-size: 16px; margin: 8px 0 15px 0; }
+  .contact { font-size: 12px; margin-top: -3px; }
 }
 </style>
 </head>
@@ -92,17 +85,17 @@ text-decoration: none;
 
 <div class="background"></div>
 
-<!-- Logo -->
+<!-- Logo SVG -->
 <img class="logo" src="logo.svg" alt="Eksperci do Kwadratu Logo">
 
-<div class="content">
-<p>Strona w budowie. Wkrótce pokażemy więcej.</p>
+<div class="main">
+  <p>Strona w budowie. Wkrótce pokażemy więcej.</p>
 </div>
 
 <div class="contact">
-<div><a href="mailto:kontakt@ekspercidokwadratu.pl">kontakt@ekspercidokwadratu.pl</a></div>
-<div><a href="tel:+48727928295">+48 727 928 295</a></div>
-<div><a href="https://instagram.com/ekspercidokwadratu" target="_blank">@ekspercidokwadratu</a></div>
+  <div><a href="mailto:kontakt@ekspercidokwadratu.pl">kontakt@ekspercidokwadratu.pl</a></div>
+  <div><a href="tel:+48727928295">+48 727 928 295</a></div>
+  <div><a href="https://instagram.com/ekspercidokwadratu" target="_blank">@ekspercidokwadratu</a></div>
 </div>
 
 </body>
